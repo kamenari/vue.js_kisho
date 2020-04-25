@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Vue.js App</title>
+  <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+  <div id="app">
+    <a v-bind:href="url" v-pre>{{message}}</a>
+  </div>
+  <!-- HTMLのコンパイルをスキップして静的なコンテンツとして描画 -->
+
+  <div id="app2">
+    <a v-bind:href="url" v-once>
+      Hello {{message}}
+    </a>
+  </div>
+  <!-- 初回だけ描画し、それ以降はリアクティブを解除し静的コンテンツとして扱う
+        描画後にdataを更新してもDOMは更新されない -->
+
+  <div id="app3">
+    <span v-text="message"></span>
+  </div>
+  <!-- 単一のマスタッシュのみで構成される場合、代わりにv-textでバインドできる -->
+
+  <div id="app4">
+    <span v-html="message"></span>
+  </div>
+  <!-- htmlタグをそのまま描画させたい場合はv-htmlを使用する -->
+
+  <div id="app5" v-cloak>
+    {{message}}
+  </div>
+  <!-- v-cloakはインスタンスの準備が終わると自動的に取り除かれる
+        コンパイル前のテンプレートが表示されることを防ぐことができる-->
+
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+  <script src="./vue/vue.js"></script> <!-- 開発用 -->
+  <script src="./main.js"></script>
+</body>
+</html>

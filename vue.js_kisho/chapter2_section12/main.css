@@ -1,0 +1,16 @@
+[v-cloak] {
+  display: none;
+}
+
+@keyframes cloak-in {
+  0% {opacity: 0;}
+}
+
+#app5 {
+  animation: cloak-in 1s;
+}
+
+#app5[v-cloak] {
+  opacity: 0;
+}
+/* v-cloakディレクティブが外れて表示される際のフェードインのスタイル */
